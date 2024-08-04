@@ -22,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-on43bli-f5_)bsox+py6zg0^^%trfag$y1b_y#bu&0vr-361r-'
 
+ADMIN_API_KEY='uvWos5Edsdln0FbPhMNbMcwoWgY6r64Y'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'trains',
     'corsheaders',
+    'rest_framework_api_key',
 ]
 
 MIDDLEWARE = [
@@ -53,13 +56,23 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # React development server
+    'http://localhost:3000',
+]
+
+CORS_ALLOW_HEADERS = [
+    'x-api-key',
+    'Content-Type',
+    'Authorization',
 ]
 
 ROOT_URLCONF = 'railway_management.urls'
+
+API_KEY_CUSTOM_HEADER = 'X-API-KEY'
+API_KEY_MODEL = 'rest_framework_api_key.models.APIKey'
 
 TEMPLATES = [
     {

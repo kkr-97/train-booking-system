@@ -1,6 +1,0 @@
-Django==5.0.7
-djangorestframework==3.13.1
-djangorestframework-api-key==2.1.0
-psycopg2-binary==2.9.3
-cors-headers==3.10.1
-whitenoise

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-on43bli-f5_)bsox+py6zg0^^%trfag$y1b_y#bu&0vr-361r-
 ADMIN_API_KEY='uvWos5Edsdln0FbPhMNbMcwoWgY6r64Y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -56,8 +56,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost:3000',

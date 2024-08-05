@@ -27,7 +27,7 @@ ADMIN_API_KEY='uvWos5Edsdln0FbPhMNbMcwoWgY6r64Y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://train-booking-system-frontend.vercel.app', 'http://localhost:3000']
 
 
 # Application definition
@@ -62,12 +62,14 @@ MIDDLEWARE = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:3000',
-#     'https://train-booking-system-frontend.vercel.app',
-# ]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'https://train-booking-system-frontend.vercel.app',
+]
+
+#CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_HEADERS = [
     'x-api-key',

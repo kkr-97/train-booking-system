@@ -59,9 +59,12 @@ MIDDLEWARE = [
 
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+#     'https://train-booking-system-frontend.vercel.app',
+# ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_HEADERS = [
     'x-api-key',
@@ -95,15 +98,16 @@ WSGI_APPLICATION = 'railway_management.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+#postgresql://kollikeerthan07:fRTH9zYgRnod5KUaQYhpQfo1qZ7cl14P@dpg-cqo2qa5ds78s73bq3190-a.oregon-postgres.render.com/trains_management
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'trains_management',
-        'USER': 'postgres',
-        'PASSWORD': 'durga@1234',
-        'HOST': 'localhost',
-        'PORT': '9617',
+        'USER': 'kollikeerthan07',
+        'PASSWORD': 'fRTH9zYgRnod5KUaQYhpQfo1qZ7cl14P',
+        'HOST': 'dpg-cqo2qa5ds78s73bq3190-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
